@@ -9,8 +9,16 @@ class World
 {
     use Animal, People;
 
+    public ?Earth $earth = null;
+
     public function __construct()
     {
         echo("World constructor" . PHP_EOL);
+        $this->earth = new Earth('100 000 km', 8000000000);
+    }
+
+    public function getSize(): string
+    {
+        return 'infinity';
     }
 }
