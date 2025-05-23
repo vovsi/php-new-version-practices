@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Closure;
 use App\Models\World;
 use Illuminate\Console\Command;
 
@@ -32,5 +33,10 @@ class Other extends Command
         // Condition operator ?: - check for empty.
         $var = '';
         $this->info($var ?: 'is empty');
+
+        // Closure function.
+        $closure = new Closure();
+        $closureFunc = $closure->multiplier(3);
+        $this->info($closureFunc(10));
     }
 }

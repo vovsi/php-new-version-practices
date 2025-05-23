@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\A;
 use App\Models\Earth;
 use Illuminate\Console\Command;
 
@@ -38,7 +39,7 @@ class Version7_1 extends Command
             echo('Error' . PHP_EOL);
         }
 
-        // Extract assoc array to variables.
+        // String keys in list.
         $data = ['city' => 'Dnipro', 'country' => 'Ukraine'];
         ['city' => $city, 'country' => $country] = $data; // extract($data); (but selectable)
         $this->info($city . ' ' . $country);
@@ -53,5 +54,16 @@ class Version7_1 extends Command
         echo(PHP_EOL);
         $end = memory_get_usage();
         echo("Memory used: " . $end - $start . ' bytes' . PHP_EOL);
+
+        // Negative offset in string.
+        $name = 'Vlad';
+        $this->info($name[-1]);
+
+        // Convert callable func to closure.
+        (new A())->getValidator('myFunc')(); // Execute closure function myFunc.
+
+        // Modification access to constant of class.
+        $this->info('Earth type: ' . $earth->getTypePlanet());
+
     }
 }

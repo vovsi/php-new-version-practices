@@ -4,6 +4,8 @@ namespace App\Models;
 
 class Earth implements Planet
 {
+    protected const TYPE_PLANET = 'with live';
+
     public function __construct(
         public string $size,
         public int $population,
@@ -27,5 +29,10 @@ class Earth implements Planet
         }
 
         return $this->people;
+    }
+
+    public function getTypePlanet(): string
+    {
+        return self::TYPE_PLANET;
     }
 }

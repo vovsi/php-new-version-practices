@@ -29,5 +29,13 @@ class Version8_0 extends Command
         // Nullsafe operator ?->
         $obj = new World();
         $this->info('Size Earth is ' . $obj?->earth?->size . ' Type: ' . gettype($obj?->earth?->size));
+
+        // Operator match.
+        $result = match (3) {
+            1 => 'one',
+            2 => 'two',
+            3 => 'three',
+        };
+        $this->info($result);
     }
 }
