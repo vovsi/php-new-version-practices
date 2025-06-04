@@ -2,8 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\A;
-use App\Models\Earth;
+use App\Models\{A, Earth};
 use Illuminate\Console\Command;
 
 class Version7_1 extends Command

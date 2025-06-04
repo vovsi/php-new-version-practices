@@ -38,5 +38,8 @@ class Other extends Command
         $closure = new Closure();
         $closureFunc = $closure->multiplier(3);
         $this->info($closureFunc(10));
+
+        // % (modulus)
+        echo(14 % 3 . PHP_EOL);
     }
 }
