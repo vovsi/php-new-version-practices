@@ -41,5 +41,31 @@ class Other extends Command
 
         // % (modulus)
         echo(14 % 3 . PHP_EOL);
+
+        // Heredoc
+        $word = 'some';
+        echo <<<TEXT
+It's
+$word
+text;
+
+TEXT;
+
+        // Nowdoc
+        echo <<<'TEXT'
+It's
+$word
+text;
+
+TEXT;
+
+        // Heredoc in array.
+        $arr = ['one', 'two', <<<THREE
+        three
+        THREE, 'four'];
+        var_dump($arr);
+
+        // Define constant.
+        define('COUNTRY', 'Ukraine');
     }
 }
