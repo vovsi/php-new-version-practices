@@ -21,4 +21,9 @@ class World
     {
         return 'infinity';
     }
+
+    public function setEarth(?Earth $earth): Earth
+    {
+        return $this->earth = $earth;
+    }
 }

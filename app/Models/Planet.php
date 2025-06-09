@@ -6,5 +6,5 @@ interface Planet
 {
     public function getPeople(array $people = []): iterable;
 
-    public function getTypePlanet(): string;
+    public function getTypePlanet(): mixed;
 }

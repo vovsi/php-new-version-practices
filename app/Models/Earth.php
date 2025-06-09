@@ -14,7 +14,7 @@ class Earth implements Planet
     {
     }
 
-    public function getPeople(iterable $people = []): iterable
+    public function getPeople(mixed $people = []): iterable
     {
         foreach ($this->people as $person) {
             yield $person;
