@@ -35,6 +35,8 @@ class Version7_4 extends Command
         //var_dump($people);
         $funcGetPeople = fn(...$people) => $people;
         //var_dump($funcGetPeople('Vlad', 'Evgeniy', 'Masha', 'Sergiy', 'Olga'));
+        $fn = fn($a, $b) => $a + $b;
+        $this->info($fn(...[1, 2])); // Unpacking an array by args.
 
         // New class WeakReference for create link on object.
         /*$earthLink = \WeakReference::create($earth);
@@ -52,5 +54,11 @@ class Version7_4 extends Command
         //var_dump($peopleFormatted);
         $funcFormat = fn($e) => '[' . $e . ']';
         //$this->info($funcFormat('Irina'));
+
+        // Operator null coalescing assignment '??='.
+        $arr = [];
+        $arr[1] ??= 'a';
+        $arr[1] ??= 'b';
+        //dump($arr);
     }
 }

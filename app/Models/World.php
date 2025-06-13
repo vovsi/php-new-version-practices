@@ -26,4 +26,18 @@ class World
     {
         return $this->earth = $earth;
     }
+
+    public function getInfo(array|null $info = [], bool $withWorld = false, bool $withEarth = false): array
+    {
+        $info = $info ?? [];
+
+        if ($withWorld) {
+            $info['world'] = 'World is ' . $this->getSize();
+        }
+        if ($withEarth) {
+            $info['earth'] = ['size' => $this->earth->size, 'population' => $this->earth->population];
+        }
+
+        return $info;
+    }
 }
