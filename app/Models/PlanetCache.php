@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\Attributes\Cache;
+use App\Models\Enums\PlanetSurface;
+use App\Models\Interfaces\Planet;
 use Illuminate\Support\Arr;
-use ReflectionClass;
 
 /**
  * Proxy
@@ -12,7 +13,10 @@ use ReflectionClass;
 class PlanetCache implements Planet
 {
     public function __construct(
-        public Planet $planet,
+        public PlanetSurface $surface,
+        public string $size,
+        public int $population,
+        public array $people,
     )
     {
     }

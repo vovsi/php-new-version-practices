@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Attributes\Cache;
+use App\Models\Enums\PlanetSurface;
+use App\Models\Interfaces\Planet;
 
 class Earth implements Planet
 {
@@ -10,6 +12,7 @@ class Earth implements Planet
     protected const TYPE_PLANET = 2242;
 
     public function __construct(
+        public PlanetSurface $surface,
         public string   $size,
         public int      $population,
         protected array $people = [],
