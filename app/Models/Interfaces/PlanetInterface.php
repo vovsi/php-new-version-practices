@@ -4,7 +4,7 @@ namespace App\Models\Interfaces;
 
 use App\Models\Enums\PlanetSurface;
 
-interface Planet
+interface PlanetInterface
 {
     public function __construct(PlanetSurface $surface, string $size, int $population, array $people);
 

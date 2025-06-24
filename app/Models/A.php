@@ -4,8 +4,13 @@ namespace App\Models;
 
 use Closure;
 
-class A
+class A extends B
 {
+    public function testMethod(): void
+    {
+
+    }
+
     public function getValidator(string $name = 'byDefault')
     {
         return Closure::fromCallable([$this, $name]); // return closure func by their name.

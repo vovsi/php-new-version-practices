@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Earth;
-use App\Models\PlanetCache;
+use App\Models\PlanetInterfaceCache;
 use App\Models\Saturn;
 use App\Models\World;
 use Illuminate\Console\Command;
@@ -104,7 +104,7 @@ class Version8_0 extends Command
         //$this->info($saturn->getTypePlanet(true));
 
         // Attributes (App\Attributes\Cache).
-        $planetCache = new PlanetCache(new Earth('10000000km', 3));
+        $planetCache = new PlanetInterfaceCache(new Earth('10000000km', 3));
         //$planetCache->generatePeople(3);
 
         // New function 'str_contains'

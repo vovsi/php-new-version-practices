@@ -4,12 +4,13 @@ namespace App\Models;
 
 use App\Attributes\Cache;
 use App\Models\Enums\PlanetSurface;
-use App\Models\Interfaces\Planet;
+use App\Models\Interfaces\PlanetInterface;
 
-class Earth implements Planet
+class Earth implements PlanetInterface
 {
-    protected const TYPE_PLANET_NAME = 'with live';
-    protected const TYPE_PLANET = 2242;
+    protected const string TYPE_PLANET_NAME = 'with live';
+    protected const int TYPE_PLANET = 2242;
+    public const int TYPE = PlanetSurface::HARD->value;
 
     public function __construct(
         public PlanetSurface $surface,
@@ -54,5 +55,10 @@ class Earth implements Planet
     public function getTypePlanet(bool $asNum = false): string
     {
         return $asNum ? self::TYPE_PLANET : self::TYPE_PLANET_NAME;
+    }
+
+    public function exampleSensitiveParam(#[\SensitiveParameter] string $secret, string $public): never
+    {
+        throw new \Exception('For example');
     }
 }

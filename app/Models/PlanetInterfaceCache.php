@@ -4,13 +4,13 @@ namespace App\Models;
 
 use App\Attributes\Cache;
 use App\Models\Enums\PlanetSurface;
-use App\Models\Interfaces\Planet;
+use App\Models\Interfaces\PlanetInterface;
 use Illuminate\Support\Arr;
 
 /**
  * Proxy
  */
-class PlanetCache implements Planet
+class PlanetInterfaceCache implements PlanetInterface
 {
     public function __construct(
         public PlanetSurface $surface,
