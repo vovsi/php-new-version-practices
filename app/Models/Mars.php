@@ -17,6 +17,17 @@ readonly class Mars implements Interfaces\PlanetInterface, RealObjectInterface
     {
     }
 
+    public function __call($name, $args)
+    {
+        var_dump($name, $args);
+    }
+
+    public function __clone(): void
+    {
+        $this->people = []; // readonly - reset only in __clone
+        $this->population = 0; // readonly - reset only in __clone
+    }
+
     public function getPeople(array $people = []): iterable
     {
         return $this->people;

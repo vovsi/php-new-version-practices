@@ -17,6 +17,11 @@ class World
         $this->earth = new Earth('100 000 km', 8000000000);
     }
 
+    public function getX(): string
+    {
+        return 'World X';
+    }
+
     public function getSize(): string
     {
         return 'infinity';
