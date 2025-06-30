@@ -11,6 +11,7 @@ class Earth implements PlanetInterface
     protected const string TYPE_PLANET_NAME = 'with live';
     protected const int TYPE_PLANET = 2242;
     public const int TYPE = PlanetSurface::HARD->value;
+    public array $animals = [];
 
     public function __construct(
         public PlanetSurface $surface,

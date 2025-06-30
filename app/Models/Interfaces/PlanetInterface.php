@@ -6,6 +6,9 @@ use App\Models\Enums\PlanetSurface;
 
 interface PlanetInterface
 {
+    // private(set) array $animals { get; } // Asymmetrical visibility of prop.
+    public array $animals { get; set; }
+
     public function __construct(PlanetSurface $surface, string $size, int $population, array $people);
 
     public function getPeople(array $people = []): iterable;

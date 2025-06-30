@@ -8,6 +8,8 @@ use App\Models\Interfaces\RealObjectInterface;
 
 readonly class Mars implements Interfaces\PlanetInterface, RealObjectInterface
 {
+    public array $animals;
+
     public function __construct(
         public PlanetSurface $surface,
         public string $size,

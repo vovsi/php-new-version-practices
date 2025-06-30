@@ -9,6 +9,7 @@ class Saturn implements PlanetInterface
 {
     protected const TYPE_PLANET_NAME = 'without live';
     protected const TYPE_PLANET = 443;
+    public array $animals = [];
 
     public function __construct(
         public PlanetSurface $surface,

@@ -12,6 +12,8 @@ use Illuminate\Support\Arr;
  */
 class PlanetInterfaceCache implements PlanetInterface
 {
+    public array $animals = [];
+
     public function __construct(
         public PlanetSurface $surface,
         public string $size,

@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Enums\PlanetSurface;
 use App\Models\Traits\Animal;
 use App\Models\Traits\People;
+use DateTimeImmutable;
+use DateTimeInterface;
 
 class World
 {
@@ -11,10 +14,28 @@ class World
 
     public ?Earth $earth = null;
 
-    public function __construct()
+    public string|int $lifetime_years = 0 {
+        get {
+            return $this->lifetime_years . ' years ago';
+        }
+        set(string|int $value) {
+            $this->lifetime_years = intval($value);
+        }
+    }
+
+    public array $coordinates = ['x' => 0, 'y' => 0] {
+        get => $this->coordinates;
+        set => isset($value['x'], $value['y']) ? $value : throw new \InvalidArgumentException('Missing "x" and "y" keys.');
+    }
+
+    public function __construct(
+        public private(set) null|DateTimeInterface $created = null { // Asymmetrical visibility of prop.
+            set => $value;
+        }
+    )
     {
         echo("World constructor" . PHP_EOL);
-        $this->earth = new Earth('100 000 km', 8000000000);
+        $this->earth = new Earth(PlanetSurface::HARD, '100 000 km', 8000000000);
     }
 
     public function getX(): string
